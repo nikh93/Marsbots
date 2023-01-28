@@ -75,7 +75,7 @@ public class Robot implements MarsPaintable {
 
 	@SuppressWarnings("unchecked")
 	public void setBots(ArrayList<Robot> bots) {
-		//TODO arrayList.clone() werden referenzen ï¿½bernommen?
+		//TODO arrayList.clone() werden referenzen übernommen?
 		this.bots = bots;
 		this.bots = (ArrayList<Robot>) bots.clone();
 		
@@ -93,7 +93,6 @@ public class Robot implements MarsPaintable {
 			setX((float) (getX() + (Math.cos(orientation * Math.PI) * this.speed)));
 			setY((float) (getY() + (Math.sin(orientation * Math.PI) * this.speed)));
 			println("x: "+x+"y: "+y);
-			println("Time: "+ Physics.getPhysics().getTimeString());
 		
 	}
 
@@ -133,7 +132,7 @@ public class Robot implements MarsPaintable {
 					combinedBots.add(r);
 				}
 				
-				//Achtung! enthï¿½lt this
+				//Achtung! enthält this
 			}
 			
 		}
@@ -189,7 +188,7 @@ public class Robot implements MarsPaintable {
 				System.out.println("ERROR: speed>1");
 			}
 		}
-		// bestimmt die grï¿½ï¿½te entfernung und reduziert speed in abhï¿½ngigkeit
+		// bestimmt die größte entfernung und reduziert speed in abhängigkeit
 		// von dieser
 		else {
 			speed = 1;

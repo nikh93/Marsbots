@@ -18,7 +18,7 @@ public class MarsView {
 	JButton nextButton, previouseButton, pauseButton, negateButton, variateButton;
 	JScrollPane scroll;
 	JTextArea text;
-	JTextField testBotTextField;
+	JTextField testBotIndex;
 	int testBot;
 
 	public void setTestSets(ArrayList<Robot> bots) {
@@ -29,14 +29,14 @@ public class MarsView {
 		}
 		testBot = MarsConstants.TEST_BOT;
 		bots.get(testBot).setTest(MarsConstants.TEST, text);
-		testBotTextField.setText(" "+testBot+" ");
+		testBotIndex.setText(" "+testBot+" ");
 		
 	}
 
 	MarsView(Screen screen) {
 		frame = new JFrame();
 		JFrame textFrame = new JFrame();
-		testBotTextField = new JTextField();
+		testBotIndex = new JTextField();
 		text = new JTextArea(20, 70);
 		scroll = new JScrollPane(text);
 		nextButton = new JButton("  >>  ");
@@ -54,10 +54,10 @@ public class MarsView {
 		pauseButton.addActionListener(new PauseButtonListener());
 		negateButton.addActionListener(new NegateButtonListener());
 		variateButton.addActionListener(new VariateButtonListener());
-		
-		buttonPanel.add(previouseButton);
+
 		buttonPanel.add(nextButton);
-		buttonPanel.add(testBotTextField);
+		buttonPanel.add(previouseButton);
+		buttonPanel.add(testBotIndex);
 		buttonPanel.add(pauseButton);
 		buttonPanel.add(negateButton);
 		buttonPanel.add(variateButton);
@@ -74,23 +74,6 @@ public class MarsView {
 		frame.pack();
 		frame.setVisible(true);
 	}
-	
-	private class NextTestBotIndex implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			if (testBot < (bots.size() - 1)) {
-				bots.get(testBot).setTest(false, null);
-				Robot r = bots.get(++testBot);
-				r.setTest(true, text);
-				testBotTextField.setText(""+testBot);
-				text.setText(r.getTestOutText());
-				frame.repaint();
-				
-			}
-		}
-
-	}
 
 	private class NextButtonListener implements ActionListener {
 
@@ -100,7 +83,7 @@ public class MarsView {
 				bots.get(testBot).setTest(false, null);
 				Robot r = bots.get(++testBot);
 				r.setTest(true, text);
-				testBotTextField.setText(""+testBot);
+				testBotIndex.setText(""+testBot);
 				text.setText(r.getTestOutText());
 				frame.repaint();
 			}
@@ -115,7 +98,7 @@ public class MarsView {
 			if (testBot > 0) {
 				bots.get(testBot).setTest(false, null);
 				bots.get(--testBot).setTest(true, text);
-				testBotTextField.setText(""+testBot);
+				testBotIndex.setText(""+testBot);
 				text.setText("");
 				frame.repaint();
 			}

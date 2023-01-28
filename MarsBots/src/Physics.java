@@ -7,18 +7,12 @@ public class Physics implements MarsPaintable{
 	private Screen screen;
 	private static boolean forceNegation, forceVariation, pause;
 	private int seconds, minutes;
-	public static Physics PHYSICS;
+
 
 	Physics(ArrayList<Robot> bots, Screen screen) {
-		PHYSICS = this;
 		this.bots = bots;
 		this.screen = screen;
-		
 		//pause = true;
-	}
-	
-	public static Physics getPhysics() {
-		return PHYSICS;
 	}
 	
 	public static Vector calcForce(Robot a, Robot b){
@@ -41,17 +35,13 @@ public class Physics implements MarsPaintable{
 		Vector botVec = Vector.calcBotVector(a, b);
 		Vector forceVec = Vector.linearProduct(1/Vector.absolute(botVec), botVec);
 		forceVec = Vector.linearProduct(f, botVec);
-		//TODO maximalkraft bestimmen oder abstoï¿½ung einbauen
+		//TODO maximalkraft bestimmen oder abstoßung einbauen
 		if((!(forceVec.getX()>-1))|| (!(forceVec.getY()>-1))){
 			System.out.println( "ERROR: Physics: calcForce(): forceVec="+forceVec+" f="+f+" Point.distance="+Point.distance(a.getX(), a.getY(), b.getX(), b.getY())+" aX="+a.getX()+" aY="+a.getY()+" bX"+" botVec="+Vector.absolute(botVec));
 		}
 		return forceVec;
 	}
-	
-	public String getTimeString () {
-		return (minutes+":"+seconds);
-	}
-	
+
 	public static void changePause() {
 		pause = !pause;
 	}
