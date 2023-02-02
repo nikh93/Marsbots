@@ -5,5 +5,7 @@ public class Settings implements Serializable{
 	int robotNumber;
 	int robotViewDistance;
 	int observationDistance;
-	int robotRadian 
+	int robotRadian;
+	int LaunchWaitTime;
+	int moveWaitTime;
 }
