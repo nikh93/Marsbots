@@ -75,7 +75,7 @@ public class Robot implements MarsPaintable {
 
 	@SuppressWarnings("unchecked")
 	public void setBots(ArrayList<Robot> bots) {
-		//TODO arrayList.clone() werden referenzen übernommen?
+		//TODO arrayList.clone() werden referenzen ï¿½bernommen?
 		this.bots = bots;
 		this.bots = (ArrayList<Robot>) bots.clone();
 		
@@ -107,7 +107,7 @@ public class Robot implements MarsPaintable {
 			g = 2 - g;
 		}
 		if(g>2){
-			System.out.println("ERROR: orientation>2");
+		//	System.out.println("ERROR: orientation>2");
 		}
 		return g;
 	}
@@ -132,18 +132,13 @@ public class Robot implements MarsPaintable {
 					combinedBots.add(r);
 				}
 				
-				//Achtung! enthält this
+				//Achtung! enthï¿½lt this
 			}
 			
 		}
 		
 		
-		if(false){
-			
-			System.out.println("combinedBots: "+combinedBots.size());
-			System.out.println("neighbors: "+neighbors.size());
-			System.out.println("bots: "+bots.size());
-		}
+	
 		
 		// nachbarn und observationBots wurden bestimmt
 		float[] distances = new float[neighborsInObsZone.size()];
@@ -185,10 +180,10 @@ public class Robot implements MarsPaintable {
 			println("x: " + x);
 			println("speed: " + speed);
 			if (speed > 1) {
-				System.out.println("ERROR: speed>1");
+				//System.out.println("ERROR: speed>1");
 			}
 		}
-		// bestimmt die größte entfernung und reduziert speed in abhängigkeit
+		// bestimmt die grï¿½ï¿½te entfernung und reduziert speed in abhï¿½ngigkeit
 		// von dieser
 		else {
 			speed = 1;
@@ -237,9 +232,9 @@ public class Robot implements MarsPaintable {
 				Vector resForce = Vector.addition( forces.toArray(new Vector[forces.size()]));
 
 				if(!(Vector.absolute(resForce)>-1)){
-					System.out.println("ERROR: Robot: abs(resForce)="+Vector.absolute(resForce)+" resForce="+resForce);
+					//System.out.println("ERROR: Robot: abs(resForce)="+Vector.absolute(resForce)+" resForce="+resForce);
 					for(Vector v : forces){
-						System.out.println(v);
+						//System.out.println(v);
 					}
 				}
 				

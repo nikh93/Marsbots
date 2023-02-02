@@ -22,6 +22,6 @@ public interface MarsConstants {
 	
 	boolean VIEW_CIRCLES_ON = true;
 	boolean ANIMATED_LAUNCH = true;
-	boolean TEST = true;
+	boolean TEST = false;
 	boolean STOP_WHEN_FINISHED = true;
 }

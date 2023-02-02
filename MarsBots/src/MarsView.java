@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +36,7 @@ public class MarsView {
 
 	MarsView(Screen screen) {
 		frame = new JFrame();
+		//screen.setBackground(new Color(234, 143, 104));
 		JFrame textFrame = new JFrame();
 		testBotIndex = new JTextField();
 		text = new JTextArea(20, 70);
@@ -74,6 +76,8 @@ public class MarsView {
 		frame.pack();
 		frame.setVisible(true);
 	}
+	
+	
 
 	private class NextButtonListener implements ActionListener {
 

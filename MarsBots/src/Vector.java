@@ -74,12 +74,12 @@ public class Vector implements Comparable{
 		
 		float cos = Vector.scalarProd(a, b)/(Vector.absolute(a)*Vector.absolute(b));
 		if(cos>1){
-			System.out.println("Vector: angle() cos="+cos+"rounded to: 1");
+			//System.out.println("Vector: angle() cos="+cos+"rounded to: 1");
 			cos = 1;
 		}
 		float angle = (float) Math.acos(cos);
 		if(!(angle>-1)){
-			System.out.println("ERROR: Vector: angle="+angle+" Vector a:"+a+" Vector b:"+b+" cos="+cos);
+			//System.out.println("ERROR: Vector: angle="+angle+" Vector a:"+a+" Vector b:"+b+" cos="+cos);
 		}
 		return angle;
 	}

@@ -1,6 +1,7 @@
 
 public class MarsControl {
 	MarsControl(){
+		
 		Screen screen = new Screen();
 		MarsView view = new MarsView(screen);
 		Shuttle shuttle = new Shuttle();
@@ -14,5 +15,8 @@ public class MarsControl {
 	public static void main(String[] args) {
 		new MarsControl();
 		
+	}
+	public static MarsControl getObj() {
+		return singleton;
 	}
 }
