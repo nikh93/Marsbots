@@ -8,6 +8,7 @@ import javax.swing.JFileChooser;
 public class SettingsReader {
 	
 	static void browseSaveFile() {
+
 		 // JFileChooser-Objekt erstellen
         JFileChooser chooser = new JFileChooser();
         // Dialog zum Oeffnen von Dateien anzeigen
